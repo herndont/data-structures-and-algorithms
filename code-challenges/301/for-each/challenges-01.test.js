@@ -70,13 +70,11 @@ const removeElements = (arr, callback) => {
   }
   return arr;
 }
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
-
 const removeWithForEach = (arr, callback) => {
   arr.forEach(element => {
     callback(element, arr);
@@ -84,7 +82,6 @@ const removeWithForEach = (arr, callback) => {
   );
   return arr;
 }
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -94,10 +91,10 @@ This function should use forEach again, but rather than taking in a callback as 
 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
-
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach()
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
