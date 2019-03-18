@@ -100,10 +100,12 @@ Write a function named splitFoods that uses split to produce the same output as 
 
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
-
+//still something not right with this one and we did it in class.
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredient.forEach((ingredient)=> {
+    result.push(ingredient.split(" ").slice(2).join(" "));
+  });
   return result;
 };
 
