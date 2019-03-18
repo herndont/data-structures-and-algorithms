@@ -32,7 +32,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let letters = arr.split('');
+  return letters;
 };
 
 
@@ -79,7 +80,16 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(element => {
+      // removed the number
+      let space = element.indexOf(" ");
+      var res = element.slice(space+1, element.length);
+      // removed the unit
+      space = res.indexOf(" ");
+      var food = res.slice(space+1, res.length);
+      result.push(food);
+
+  });
   return result;
 };
 
@@ -109,7 +119,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(element => {
+    // removed everything after the verb
+    let space = element.indexOf(" ");
+    var res = element.slice(element.length, space);
+    result.push(res);
+  });
   return result;
 };
 
@@ -127,7 +142,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+    for(let i=arr.length-1; i>=0; i--) {
+        const even = arr[i] % 2 === 0;
+        if(even===true){
+            arr.splice(i, 1);
+        }
+    }
 };
 
 /* ------------------------------------------------------------------------------------------------
