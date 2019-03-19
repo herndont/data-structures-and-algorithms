@@ -1,7 +1,5 @@
 'use strict';
 
-import { objectExpression } from "@babel/types";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -111,7 +109,21 @@ hasChildrenValues(characters, 'Sansa') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
+const hasChildrenValues = (arr, characterName) => {
+    arr.forEach(character => {
+        if(characterName === character.name) {
+            if(character.children.length === 0) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        // Object.values(character);
+        
+    });
+
+    return false;
 };
 
 
