@@ -31,6 +31,9 @@ const filterStringsWithVowels = (arr) => {
   });
   return vowels;
 };
+// this is the anwer sheet partial
+// const vowelRegex =/[aeiou]/
+//return 
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,6 +96,8 @@ const getBaseStatGreaterThan = (arr, minBaseStat) => {
   });
   return newArr;
 };
+//Below is the answer from the answer sheet
+//return arr.filter(element => element.baseStat > minBaseStat)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -186,8 +191,12 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 //   });
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
-};
+  return arr.filter(element => typeof element === 'number').map) //this one is a partial from the answer sheet.
+//   let noStrings = arr.filter((val, ind) {
+//     return !(typeof val === 'string');
+//   })
+//   return noStrings.map(i => % 2 === 0 ? 'evens' 'odds');
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
