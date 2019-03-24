@@ -1,7 +1,5 @@
 'use strict';
 
-import { objectExpression } from "@babel/types";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -112,21 +110,29 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, characterName) => {
-    arr.forEach(character => {
-        if(characterName === character.name) {
-            if(character.children.length === 0) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        }
-        // Object.values(character);
+  let children = 0;
+  object.value(arr).forEach(person => {
+    if(person.name === characterName) {
+      children = person.children.length > 0 ? true : false;
+    }
+  });
+  return children
+}; 
+//     arr.forEach(character => {
+//         if(characterName === character.name) {
+//             if(character.children.length === 0) {
+//                 return false;
+//             }
+//             else {
+//                 return true;
+//             }
+//         }
+//         // Object.values(character);
         
-    });
+//     });
 
-    return false;
-};
+//     return false;
+// };
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,18 +142,28 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 
 The input and output of this function are the same as the input and output from challenge 4.
 ------------------------------------------------------------------------------------------------ */
-//This was given in class. Check and make sure that this one runs correctly.
+
 const hasChildrenEntries = (arr, character) => {
-  let hasChildren = 0;
-  object.entries(arr).forEach(item {
+  let children = 0;
+  object.entries(arr).forEach(item => {
     item.forEach(person => {
       if(person.name === character) {
-        children = person.children.length > 0 ? true : false;
+        children = person.children.length > 0 ? true : false
       }
     });
   });
   return children;
 };
+//   let hasChildren = 0;
+//   object.entries(arr).forEach(item {
+//     item.forEach(person => {
+//       if(person.name === character) {
+//         children = person.children.length > 0 ? true : false;
+//       }
+//     });
+//   });
+//   return children;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
