@@ -26,15 +26,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 const filterStringsWithVowels = (arr) => {
-  let vowels = arr.filter(function(element, ind) {
-      return(element.match(/^[aeiou]/));
-  });
-  return vowels;
+  const vowel = /[aeiou]/;
+  return arr.filter(str => vowel.test(str));
 };
-// this is the anwer sheet partial
-// const vowelRegex =/[aeiou]/
-//return 
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,7 +40,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 
 const notInFirstArray = (forbiddenValues, arr) => {
-//   let newArr = arr.filter( (value) => )
+  return arr.filter(element => !forbiddenValues.includes(element));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +102,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +162,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(character => !character.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -191,7 +185,9 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 //   });
 
 const evenOddNumericValues = (arr) => {
-  return arr.filter(element => typeof element === 'number').map) //this one is a partial from the answer sheet.
+  return arr.filter(element => typeof element === 'number').map(element => element % 2 === 0 ? 'even' : 'odd');
+};
+//this one is a partial from the answer sheet.
 //   let noStrings = arr.filter((val, ind) {
 //     return !(typeof val === 'string');
 //   })
