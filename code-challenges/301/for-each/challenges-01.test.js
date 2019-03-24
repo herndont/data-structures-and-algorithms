@@ -92,7 +92,12 @@ This function should use forEach again, but rather than taking in a callback as 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
 const removeWithAnon = (arr) => {
-  arr.forEach()
+  arr.forEach((element) => {
+    if (element % 3 === 2) {
+      arr.pop();
+    }
+  });
+  return arr;
 }
 
 
@@ -114,7 +119,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  const list = [];
+
+  availableItems.forEach(item => {
+    if (item.available) {
+      list.push(item.name);
+    }
+  });
+  return list;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +144,20 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const out = [];
+
+  arr.forEach(num => {
+    if (num % 5 === 0 && num % 3 === 0) {
+      out.push('Fizz Buzz');
+    } else if (num % 3 === 0) {
+      out.push('Fizz');
+    }else if (num % 5 === 0) {
+      out.push('Buzz');
+    } else {
+      out.push(num);
+    }
+  });
+  return out;
 }
 
 /* ------------------------------------------------------------------------------------------------
