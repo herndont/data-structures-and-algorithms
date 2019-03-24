@@ -103,8 +103,9 @@ You may also use other string or array methods.
 //still something not right with this one and we did it in class.
 const splitFoods = (recipe) => {
   let result = [];
-  recipe.ingredient.forEach((ingredient)=> {
-    result.push(ingredient.split(" ").slice(2).join(" "));
+  recipe.ingredients.forEach((ingredient) => {
+    let food = ingredient.split(' ');
+    result.push(food.slice(2).join(' '));
   });
   return result;
 };
@@ -121,11 +122,8 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  recipe.steps.forEach(element => {
-    // removed everything after the verb
-    let space = element.indexOf(" ");
-    var res = element.slice(element.length, space);
-    result.push(res);
+  recipe.steps.forEach((element) => {
+    result.push(element.split(' ').slice(0, 1)[0]);
   });
   return result;
 };
@@ -168,7 +166,10 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters <= 0) return str;
+  let newStr = str.split('');
+  newStr = newStr.slice(0, -numberOfCharacters);
+  return newStr.join('');
 };
 
 
