@@ -152,7 +152,9 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-
+  return arr.reduce((accumulator, current) => {
+    return current.children ? accumulator + current.children.length : accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,7 +166,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let countAndSum = arr.reduce((accumulator, current) => {
+    return {
+      count: accumulator.count + 1,
+      sum: accumulator.sum + current,
+    };
+  },  { count: 0, sum: 0 });
+
+  return countAndSum.sum / countAndSum.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -185,7 +194,7 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator , current) => isPrime(current) ? accumulator + 1 : accumulator, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
