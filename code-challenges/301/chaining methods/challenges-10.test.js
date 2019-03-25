@@ -168,6 +168,15 @@ let findMaleAndFemale = (data, input) => {
   }, []);
 };
 
+//Juliann's example from the class ----- This is not a correct chainging.
+let findMaleAndFemale = (data) => {
+  let filteredArray =data.filter(element => element.gender === 'female' || element.gender === 'male');
+    let namesArray = filteredArray.map(element => element.name);
+    let stringyArray = namesArray.toString();
+    let regex = /,+/g;
+    return stringifyArray.replace(regex, 'and');
+  };
+
 // const returnNames = (arr) => {
 //   let namesArr = arr.reduce ( (accumulator, value, idx) => {
 //       accumulator.push(value.name);
