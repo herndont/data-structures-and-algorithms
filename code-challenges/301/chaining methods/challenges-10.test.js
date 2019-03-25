@@ -10,10 +10,7 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-
-
 const count = (target, input) => {
-    // Solution code here...
     let counter = input.reduce((accumulator, array) => {
         array.forEach(element => {
             if(target === element) {
@@ -36,13 +33,10 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-    let addition = input.reduce((accumulator, array, ind) => {
-        array.forEach(element => {
-            accumulator = accumulator + element[ind];
-        })
-        return accumulator;
-    },0 );
-    return addition;
+  return input.reduce((totalSum, innerArray) => {
+    innerArray.forEach(number => totalSum = totalSum + number);
+    return totalSum;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,8 +52,48 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  // let numbers = input.forEach(element => {
+  //   const validate = /[0-9]/g;
+  //   numbers.push(validate.test(element));
+  // })
+  
 };
+
+
+//reduce using regex to find only numbers. -----complete
+//reduce using % to find only numbers divisible by 5 -----
+//go through array and put 2 to the power of all integers.
+
+//example from previous challenge
+// const isNum = (input) => {
+//   const validate = /[0-9]/g;
+//   return validate.test(input);
+// };
+
+
+//example from previous challenge
+// const forLoopTwoToThe = (arr) => {
+//   let newArr = [];
+//   for(let i=0; i<arr.length; i++) {
+//       let answer = (2 ** arr[i]);
+//       newArr.push(answer);
+//   }
+//   return newArr;
+// };
+//example from previous challenge
+
+// const isPrime = (value) => {
+//   for (let i = 2; i < value; i++) {
+//     if (value % i === 0) {
+//       return false;
+//     }
+//   }
+//   return value > 1;
+// };
+
+// const countPrimeNumbers = (arr) => {
+//   return arr.reduce((accumulator , current) => isPrime(current) ? accumulator + 1 : accumulator, 0);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -123,9 +157,24 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
+// let findMaleAndFemale = (data) => {  ---original start
+let findMaleAndFemale = (data, input) => {
+  let sex = data.reduce ( (accumulator, value, idx) => {
+    accumulator.push(value.name);
+    if(value.name === input) {
+      return accumulator;
+    }
+  return sex;
+  }, []);
 };
+
+// const returnNames = (arr) => {
+//   let namesArr = arr.reduce ( (accumulator, value, idx) => {
+//       accumulator.push(value.name);
+//       return accumulator;
+//   }, []);
+//   return namesArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
