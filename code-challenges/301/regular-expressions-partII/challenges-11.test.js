@@ -42,12 +42,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let validate = /^\w[a-zA-Z0-9].{2}@[.net.com.org]/(); 
+  let validate = /^[\w0-9]+(.)?[\w0-9]+@\w+.(net|com|org)$/gi; 
   return validate.test(email);
 };
-
-//https://www.w3resource.com/javascript/form/email-validation.php?fbclid=IwAR297DzPGkVX-c0QtD-52YqbqnqRaRIFK0RSQxa8SsFONJm7-H1BceKtDSE
-//Go to this website and try to figure out the question above.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -71,10 +68,10 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-    let validate = ;
+    let validate = /^(\(\d{3}\)|\d{3})(|-)?\d{3}(|-)?\d{4}$/g;
     return validate.test(phoneNumber);
 };
-
+//need to add a possible space after the first 3 digits
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
 
