@@ -49,19 +49,13 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
-const salesData = (hours, data) => {
-        let sales = [];
-    for(let i=0; i < hours.length; i++){
-
-        let salesTimes = {};
-
-        for (let j=0; j < data.length; j++){
-            salesTimes.push(`sales: ${hours[i]} cookies, = time ${data[j]}`);
-        }
-        sales.push(salesTimes);
-    }
-    return sales;
-};
+const salesData =(hours, data) => {
+  let newArrayofObjects = [];
+  for(var key = 0; key < hours.length; key++) {
+    newArrayofObjects.push({sales: data[key]+' cookies', time: hours[key]});
+  }
+  return newArrayofObjects;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
