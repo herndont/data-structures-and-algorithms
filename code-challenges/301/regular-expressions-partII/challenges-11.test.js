@@ -68,10 +68,10 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-    let validate = /^(\(\d{3}\)|\d{3})(|-)?\d{3}(|-)?\d{4}$/g;
+    let validate = /^(\(\d{3}\)|\d{3})( |-)?\d{3}( |-)?\d{4}$/g;
     return validate.test(phoneNumber);
 };
-//need to add a possible space after the first 3 digits
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
 
