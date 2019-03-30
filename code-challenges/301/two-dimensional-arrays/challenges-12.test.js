@@ -76,7 +76,15 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-    
+  for (let i=0; i < arr.length; i++) {
+    if (arr[i].store === 'Pet store') {
+      for (let j=0; j<arr[i].items.length; j++) {
+        if (arr[i].items[j].name === 'Treats') {
+          return arr[i].items[j].quantity;
+        }
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,7 +130,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let total = 1;
+  for(let i=0; i<numbers.length; i++) {
+    for(let j=0; j < numbers[i].length; j++) {
+      total = total * numbers[i][j];
+    }
+  }
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,7 +177,7 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
