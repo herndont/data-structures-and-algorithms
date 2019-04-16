@@ -1,3 +1,5 @@
+I paired with Jessica Zuchowski on this challenge in class.
+
 # Reverse an Array
 
 The following information was found at http://www.java67.com/2016/10/3-ways-to-reverse-array-in-java-coding-interview-question.html
@@ -37,5 +39,5 @@ My approach was to reverse the array in place. I did this by introducing the var
 As stated in class we are not referencing the Big 0 yet, so I will leave this for the next challenge.
 
 ## Solution
-![White Board Solution](../assets/array_reverse.jpg)
+<img src="assets\array_reverse.jpg" alt="white board solution">
 
