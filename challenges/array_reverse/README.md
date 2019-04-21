@@ -39,5 +39,5 @@ My approach was to reverse the array in place. I did this by introducing the var
 As stated in class we are not referencing the Big 0 yet, so I will leave this for the next challenge.
 
 ## Solution
-<img src="assets\array_reverse.jpg" alt="white board solution">
+[White Board Image](../assets/array_reverse.jpg)
 
